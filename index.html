@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz 11 Meses Amor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe Script", cursive;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      color: #000; /* 🔹 Ahora todo el texto en negro */
+      text-align: center;
+      padding-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 20px;
+      animation: latido 1.5s infinite;
+    }
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    /* Slideshow */
+    .slideshow {
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      background: #000;
+    }
+    .slideshow img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+    .slideshow img.active {
+      display: block;
+    }
+    /* Botón música */
+    button {
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      margin: 15px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #fff;
+      color: #e91e63;
+    }
+    /* Texto de amor */
+    .love-text {
+      margin-top: 20px;
+      padding: 20px;
+      font-size: 1.2em;
+      line-height: 1.6em;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.7); /* fondo translúcido blanco */
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Feliz 11 Meses Amor 💖</h1>
+
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <img src="foto1.jpg" class="active">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+  </div>
+
+  <!-- Botón Música -->
+  <button onclick="toggleMusic()">🎶 Reproducir música</button>
+  <audio id="music" loop>
+    <source src="cancion.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Texto de amor -->
+  <div class="love-text">
+    hola amor se que se nos an olvidado un poco los meses o 
+	felicitarnos pero hoy me acorde y pues no supe que hacer llevo mucho 
+	tiempo intentando arreglar un error que tiene esto esta dificil no lo puedo
+	publicar pero si no te mandare un video de como era igual lo arreglare 
+	tarde o temprano te amo mucgo felices 11 meses te amo mucho gracias por todo
+	este tiempo y por todo ya casi 12 mesesotes pero te amo y te amare muvhote okey
+	siempre y para toda la vida te amoooooooo descamsa y cuando veas esto que sepas que estas hermososta 
+	y te amo mucho
+  </div>
+
+  <script>
+    // Slideshow
+    let current = 0;
+    const images = document.querySelectorAll(".slideshow img");
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 3000);
+
+    // Música
+    const music = document.getElementById("music");
+    let isPlaying = false;
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        event.target.textContent = "🎶 Reproducir música";
+      } else {
+        music.play();
+        event.target.textContent = "⏸️ Pausar música";
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+</body>
+</html>
